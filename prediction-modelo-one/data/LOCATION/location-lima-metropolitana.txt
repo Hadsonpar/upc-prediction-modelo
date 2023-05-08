@@ -1,0 +1,86 @@
+1,Cercado de Lima
+2,Ancón
+3,Ate
+4,Barranco
+5,Breña
+6,Carabayllo *
+7,Comas
+8,Chaclacayo
+9,Chorrillos
+10,El Agustino
+11,Jesús María
+12,La Molina
+13,La Victoria
+14,Lince
+15,Lurigancho
+16,Lurín
+17,Magdalena
+18,Miraflores
+19,Pachacamac
+20,Pucusana
+21,Pueblo Libre
+22,Puente Piedra *
+23,Punta Negra
+24,Punta Hermosa
+25,Rímac
+26,San Bartolo
+27,San Isidro
+28,Independencia
+29,San Juan de Miraflores
+30,San Luis
+31,San Martín de Porres
+32,San Miguel
+33,Santiago de Surco
+34,Surquillo
+35,Villa María del Triunfo
+36,San Juan de Lurigancho
+37,Santa María del Mar
+38,Santa Rosa
+39,Los Olivos *
+40,Cieneguilla *
+41,San Borja
+42,Villa el Salvador
+43,Santa Anita
+44,Callao
+45,Bellavista
+46,Carmen de la Legua
+47,La Perla
+48,La Punta
+49,Ventanilla
+
+
+
+15,18000,40
+15,15000,6
+15,15000,9
+
+
+15,19000,40
+55,75000,6
+15,1500000,6
+15,18000,9
+20,30000,6
+25,36000,6
+30,45000,6
+30,55000,9
+80,95000,6
+90,140000,39
+40,55000,6
+45,61000,6
+50,70000,6
+90,100000,6
+110,120000,6
+60,80000,6
+45,62000,9
+120,150000,6
+150,180000,6
+70,86000,6
+90,120000,40
+180,210000,6
+190,218000,6
+245,275000,6
+220,230000,6
+220,270000,40
+230,250000,6
+90,90000,22
+90,170000,9
