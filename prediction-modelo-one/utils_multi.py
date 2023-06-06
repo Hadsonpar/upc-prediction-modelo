@@ -412,7 +412,7 @@ def run_gradient_descent(X,y,iterations=1000, alpha = 1e-6):
 
 #bs = np.array([ p[1] for p in hist["params"]]) 
 
-def run_gradient_descent_feng(X,y,iterations=1000, alpha = 1e-6):
+def run_gradient_descent_feng(X,y,iterations=1000, alpha = 1e-6): 
     m,n = X.shape
     # initialize parameters
     initial_w = np.zeros(n)

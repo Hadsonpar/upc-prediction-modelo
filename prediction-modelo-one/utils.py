@@ -38,17 +38,103 @@ def load_location():
 
 def percent_location(code):
     if (code == 1):
-        values = 0.040
+        values = 0.0040
     elif(code == 2):
-        values = 0.020
+        values = 0.0020
     elif(code == 3):
-        values = 0.012
+        values = 0.0012
     elif(code == 4):
-        values = 0.050
+        values = 0.0050
     elif(code == 5):
-        values = 0.040
+        values = 0.0040
     elif(code == 6):
-        values = 0.037    
+        values = 0.0037
+    elif(code == 7):
+    	values = 0.0027
+    elif(code == 8):
+        values = 0.0018
+    elif(code == 9):
+        values = 0.0050
+    elif(code == 10):
+        values = 0.0035
+    elif(code == 11):
+        values = 0.0050
+    elif(code == 12):
+        values = 0.0056
+    elif(code == 13):
+        values = 0.0038
+    elif(code == 14):
+        values = 0.0042
+    elif(code == 15):
+        values = 0.0051
+    elif(code == 16):
+        values = 0.0016
+    elif(code == 17):
+        values = 0.0040
+    elif(code == 18):
+        values = 0.0070
+    elif(code == 19):
+        values = 0.0030
+    elif(code == 20):
+        values = 0.0025
+    elif(code == 21):
+        values = 0.0050
+    elif(code == 22):
+        values = 0.0030
+    elif(code == 23):
+        values = 0.0016
+    elif(code == 24):
+        values = 0.0059
+    elif(code == 25):
+        values = 0.0020
+    elif(code == 26):
+        values = 0.0060
+    elif(code == 27):
+        values = 0.0070
+    elif(code == 28):
+        values = 0.0050
+    elif(code == 29):
+        values = 0.0040
+    elif(code == 30):
+        values = 0.0050
+    elif(code == 31):
+        values = 0.0050
+    elif(code == 32):
+        values = 0.0056
+    elif(code == 33):
+        values = 0.0070
+    elif(code == 34):
+        values = 0.0050
+    elif(code == 35):
+        values = 0.0030
+    elif(code == 36):
+        values = 0.0040
+    elif(code == 37):
+        values = 0.0050
+    elif(code == 38):
+        values = 0.0030
+    elif(code == 39):
+        values = 0.0065
+    elif(code == 40):
+        values = 0.0050
+    elif(code == 41):#'San Borja'
+        values = 0.0070
+    elif(code == 42):
+        values = 0.0042
+    elif(code == 43):
+        values = 0.0050
+    elif(code == 44):
+        values = 0.0068
+    elif(code == 45):
+        values = 0.0052
+    elif(code == 46):
+        values = 0.0036
+    elif(code == 47):
+        values = 0.0054
+    elif(code == 48):
+        values = 0.0060
+    elif(code == 49):
+        values = 0.0046    
     
     return values
 

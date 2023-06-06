@@ -156,8 +156,9 @@ def zscore_normalize_features(X):
     return (X_norm, mu, sigma)
 
 # First, normalize out example.
-@app.get("/price_house_model/{sizemts}/{location}/{age}")
-def read_calculate(sizemts: int, location: int, age: int):
+#mts2, Dormitorios, ubicacion piso, edad
+@app.get("/price_house_model/{sizemts}/{rooms}/{floor}/{age}/{location}")
+def read_calculate(sizemts: float, rooms: int, floor: int, age: float, location: int):
     #pie_cuadrado = 10.764
 
     data = {}
@@ -166,37 +167,42 @@ def read_calculate(sizemts: int, location: int, age: int):
     #p = pie_cuadrado()#10.764
     sqft, iterations, alpha = pie_cuadrado()#10.764
     
-    if age > 10:
-         valuemessage = 'construcción del inmueble no mayor a 10 años'
+    if floor > 7:
+        valuemessage = 'modelo construido no mayor a una ubicación de 7 pisos del inmueble'
     else:
+        #if age > 10:
+        #    valuemessage = 'construcción del inmueble no mayor a 10 años'
+        #else:
 
-        if zm_train[5] == location:
-
-            Xm_norm, Xm_mu, Xm_sigma = zscore_normalize_features(Xm_train)
-            wm_norm, bm_norm, hist = run_gradient_descent(Xm_norm, ym_train, iterations, alpha)
+        #if zm_train[5] == location:
             
-            mts = sizemts
-            mts_cuadrados = mts * sqft
+        percent = percent_location(location)
 
-            #construccion = random.randint(5, 20)        
-            x_house = np.array([mts_cuadrados, 4, 2, age])    
-            x_house_norm = (x_house - Xm_mu) / Xm_sigma    
-            x_house_predict = np.dot(x_house_norm, wm_norm) + bm_norm
-            x_price = x_house_predict * 1000
+        Xm_norm, Xm_mu, Xm_sigma = zscore_normalize_features(Xm_train)
+        wm_norm, bm_norm, hist = run_gradient_descent(Xm_norm, ym_train, iterations, alpha)
+        
+        mts = sizemts
+        mts_cuadrados = mts * sqft
+        
+        x_house = np.array([mts_cuadrados, rooms, floor, age])    
+        x_house_norm = (x_house - Xm_mu) / Xm_sigma    
+        x_house_predict = np.dot(x_house_norm, wm_norm) + bm_norm
+        x_price = x_house_predict * 1000
+        x_pricep = x_price + (x_price * percent)
 
-            data['characteristic'].append(
-                {
-                'inmueble': 1,
-                'size': sizemts,
-                'price': f"$ {format(x_price,'0,.2f')}",
-                'bedrooms': x_house[1],
-                'floors': x_house[2],
-                'age': age,            
-                'location': read_location(location)
-                })
+        data['characteristic'].append(
+            {
+            'inmueble': 1,
+            'size': sizemts,
+            'price': f"$ {format(x_pricep,'0,.2f')}",
+            'rooms': x_house[1],
+            'floors': x_house[2],
+            'age': age,            
+            'location': read_location(location)
+            })
 
-            valuemessage = 'completed process' 
-        else:        
-            valuemessage = 'dataset no definido para {}'.format(read_location(location))
+        valuemessage = 'completed process' 
+        #else:        
+        #    valuemessage = 'dataset no definido para {}'.format(read_location(location))
 
     return {'SizeMts': sizemts, 'message': valuemessage, 'data': data}    
